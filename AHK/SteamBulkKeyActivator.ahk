@@ -290,22 +290,22 @@ steam_check_if_key_worked(){ 				;check if steam key worked
 		;make a difference between existing product and new product.
 		;we need to press the print button & close that window again
 		applog("checking if this is a new product")
-		steam_click_print()
-		if(is_print_window()){ ;4c
+		;steam_click_print()
+		;if(is_print_window()){ ;4c
 			applog("[new product] we activated a new product")
 			log_to_file(", 'new product' => 'true'",false)
 			;this means there is a print window & we closed it.
 			click_btn(3,"> clicked Finish 	[activation]")
 			return true
-		}else{ ;4b
-			applog("[duplicate product] we activated a duplicate product")
-			log_to_file(", 'new product' => 'false'",false)
+		;}else{ ;4b
+			;applog("[duplicate product] we activated a duplicate product")
+			;log_to_file(", 'new product' => 'false'",false)
 			;this means there is no print window
-			click_btn(2,"> clicked next [activation]")
-			steam_check_if_on_install_screen()
-			click_btn(3,"> clicked Cancel 	[Install]")
-			return true
-		}
+			;click_btn(2,"> clicked next [activation]")
+			;steam_check_if_on_install_screen()
+			;click_btn(3,"> clicked Cancel 	[Install]")
+			;return true
+		;}
 	}
 }
 steam_check_invalid_or_too_many_attempts(){ ;check if steam is angry at us
